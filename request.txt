@@ -1,0 +1,29 @@
+新增舆论
+
+POST  [服务器IP]/internal/insert
+请求头：
+key = f281088c8f10c1042610310854090cc22c742
+请求体：
+title: String, 话题标题。例："FaZe击败NaVi夺取IEM科隆冠军"
+region: Int, 地区代码。例：530000（只传回尾号为00的地区代码，否则报错）
+briefIntroduction: String, 话题简介。例："在IEM科隆2022比赛中，……"
+heat: Long, 话题热度。例：13000201
+posts: Long, 帖子数量。例：2311
+stars: Int, 星级。例：3
+trend: List<Long>, 24小时趋势，列表包含从旧到新的每小时热度。例：[100, 200, 300, 400, 500, 600, 600, 400, ...] （共24个元素）
+url: String，跳转链接。
+
+
+
+更新舆论
+
+POST  [服务器IP]/internal/update
+请求头：
+key = f281088c8f10c1042610310854090cc22c742
+请求体：
+title: String, 话题标题
+heat: Long, 话题热度
+posts: Long, 帖子数量
+stars: Int, 星级
+trend: List<Long>, 24小时趋势，列表包含从旧到新的每小时热度
+
